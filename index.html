@@ -4,66 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Gustavo Holanda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Gustavo Holanda</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <h1>Gustavo Holanda</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </header>
 
-    <section id="sobre">
-        <div>
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Transformando ideias em experiências digitais</h2>
+            <p>Desenvolvedor Python | Web | APIs | Automações </p>
+            <a href="#projetos" class="btn">Ver Projetos <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
 
+    <section id="sobre">
+        <div class="container">
+            <div class="sobre-img">
+                <img src="assets/imagens/perfil.jpg" alt="Gustavo Holanda">
+            </div>
+            <div class="sobre-content">
+                <h2>Sobre Mim</h2>
+                <p>Sou Gustavo Holanda de Sousa, desenvolvedor focado em criar sites modernos, rápidos e com excelente experiência de usuário.</p>
+                <p>Atuo com front-end e back-end usando tecnologias como HTML, CSS, JavaScript, React e Flask. Gosto de transformar ideias em soluções digitais que realmente fazem a diferença.</p>
+                
+                
+            </div>
         </div>
-        <div>
-            <h2>Sobre Mim</h2>
-            <p>Sou Gustavo Holanda de Sousa, desenvolvedor focado em criar sites modernos, rápidos e com excelente experiência de usuário. Atuo com front-end e back-end usando tecnologias como HTML, CSS, JavaScript, React e Flask. Gosto de unir design e funcionalidade para transformar ideias em soluções digitais que realmente fazem a diferença.</p>
-        </div>
-        
     </section>
 
     <section id="skills">
-        <h2>Habilidades</h2>
-        <div class="skills-container">
-            <div class="skill">Python</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">React</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Flask</div>
-            <div class="skill">Testes Unitários</div>
+        <div class="container">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                    <span>90%</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                    <span>85%</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                    <span>80%</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>SQL</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                    <span>75%</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Flask</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                    <span>85%</span>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Testes Unitários</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                    <span>70%</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="projetos">
-        <h2>Projetos</h2>
-        <div class="projetos-container">
-            <div class="projeto">
-                <h3>Site de Loja</h3>
-                <p>Criação de um e-commerce moderno e responsivo.</p>
-            </div>
-            <div class="projeto">
-                <h3>API de Filmes</h3>
-                <p>Consumo de API para busca de filmes e séries.</p>
-            </div>
-            <div class="projeto">
-                <h3>App de Gestão</h3>
-                <p>Aplicativo para gerenciamento de contas e produtos.</p>
+        <div class="container">
+            <h2>Projetos Destacados</h2>
+            <div class="projetos-container">
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="assets/imagens/marque_bem.png" alt="Marque Bem">
+                    </div>
+                    <h3>Marque Bem</h3>
+                    <p class="descricao">Sistema para marcação de exames com login, painel de administração e base em Flask/SQLite.</p>
+                    <div class="tech-stack">
+                        <span>Flask</span>
+                        <span>SQLite</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                    </div>
+                    <a href="https://github.com/GustavoHolanda16/Marque_Bem" class="btn-repositorio" target="_blank">Ver no GitHub</a>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="assets/imagens/Plot_Pulse.png" alt="PLOT PULSE">
+                    </div>
+                    <h3>PLOT PULSE</h3>
+                    <p class="descricao">Aplicação web em HTML, CSS e JS que consome a OMDb API e exibe dados completos de filmes.</p>
+                    <div class="tech-stack">
+                        <span>JavaScript</span>
+                        <span>API REST</span>
+                        <span>CSS3</span>
+                    </div>
+                    <a href="https://github.com/GustavoHolanda16/filmes" class="btn-repositorio" target="_blank">Ver no GitHub</a>
+
+                </div>
+
             </div>
         </div>
     </section>
 
     <footer id="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato via <a href="https://www.linkedin.com/in/gustavoholanda" target="_blank">LinkedIn</a> ou veja meus códigos no <a href="https://github.com/gustavoholanda" target="_blank">GitHub</a>.</p>
+        <div class="container">
+            <h2>Contato</h2>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contato@gustavoholanda.com">holandsouza@gmail.com</a>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/gustavoholandasousa/" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/GustavoHolanda16" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gustavo Holanda. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/gustavoholandasousa/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/GustavoHolanda16" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="js/main.js" defer></script>
+
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
