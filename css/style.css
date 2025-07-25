@@ -61,7 +61,7 @@ header {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
@@ -383,57 +383,79 @@ nav ul li a:hover::after {
 
 /* Projetos - Carrossel Implícito em Mobile */
 #projetos {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: var(--dark-gray);
+    position: relative;
 }
 
 #projetos h2 {
     text-align: center;
     font-size: clamp(1.75rem, 4vw, 2.5rem);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     position: relative;
+    color: var(--white);
 }
 
 #projetos h2::after {
     content: '';
     position: absolute;
-    bottom: -0.75rem;
+    bottom: -1.25rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 5rem;
-    height: 0.25rem;
+    width: 6rem;
+    height: 0.3rem;
     background: var(--primary);
-    border-radius: 0.125rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
 .projetos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-    gap: 2.5rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    gap: 3rem;
+    padding: 0 1.5rem;
 }
 
 .projeto-card {
     background: var(--dark);
-    border-radius: 0.9375rem;
+    border-radius: 1rem;
     overflow: hidden;
     transition: var(--transition);
-    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .projeto-card:hover {
-    transform: translateY(-0.625rem);
-    box-shadow: 0 0.9375rem 2.5rem rgba(0, 216, 255, 0.15);
+    transform: translateY(-0.75rem);
+    box-shadow: 0 1.5rem 3rem rgba(0, 216, 255, 0.2);
+    border-color: rgba(0, 216, 255, 0.3);
 }
 
 .projeto-img {
-    height: 15.625rem;
+    height: 16rem;
     overflow: hidden;
     position: relative;
+}
+
+.projeto-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
+    z-index: 1;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.projeto-card:hover .projeto-img::before {
+    opacity: 1;
 }
 
 .projeto-img img {
@@ -444,11 +466,11 @@ nav ul li a:hover::after {
 }
 
 .projeto-card:hover .projeto-img img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .projeto-content {
-    padding: 1.5rem;
+    padding: 2rem;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -456,54 +478,151 @@ nav ul li a:hover::after {
 
 .projeto-card h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     color: var(--white);
+    position: relative;
+    padding-bottom: 0.75rem;
+    text-align: center;
+}
+
+.projeto-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 0.15rem;
+    background: var(--primary);
+    border-radius: 0.25rem;
+    transition: var(--transition);
+}
+
+.projeto-card:hover h3::after {
+    width: 5rem;
+    background: var(--secondary);
 }
 
 .projeto-card .descricao {
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.75rem;
     color: var(--text);
-    line-height: 1.6;
-    flex: 1;
+    line-height: 1.7;
+    text-align: center;
+    padding: 0 0.5rem;
 }
 
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.625rem;
-    margin-bottom: 1.25rem;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
     justify-content: center;
 }
 
 .tech-stack span {
     background: rgba(0, 216, 255, 0.1);
     color: var(--primary);
-    padding: 0.3125rem 0.9375rem;
-    border-radius: 1.25rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 1.5rem;
     font-size: 0.9rem;
     font-weight: 500;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 216, 255, 0.15);
+}
+
+.tech-stack span:hover {
+    background: rgba(0, 216, 255, 0.2);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 216, 255, 0.1);
 }
 
 .btn-repositorio {
-    padding: 0.625rem 1.25rem;
-    background-color: var(--primary);
+    padding: 0.8rem 1.75rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: var(--white);
-    border-radius: 1.125rem;
+    border-radius: 2rem;
     text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
     text-align: center;
     margin-top: auto;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
     display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 216, 255, 0.2);
+}
+
+.btn-repositorio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
 }
 
 .btn-repositorio:hover {
-    background-color: var(--primary-dark);
-    transform: scale(1.05);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 216, 255, 0.3);
+}
+
+.btn-repositorio:hover::before {
+    left: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    #projetos {
+        padding: 5rem 0;
+    }
+    
+    .projetos-container {
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #projetos h2 {
+        margin-bottom: 3.5rem;
+    }
+    
+    .projeto-img {
+        height: 14rem;
+    }
+    
+    .projeto-content {
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #projetos {
+        padding: 4rem 0;
+    }
+    
+    .projetos-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .projeto-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .btn-repositorio {
+        padding: 0.7rem 1.5rem;
+    }
 }
 
 /* Contato - Layout Adaptativo */
